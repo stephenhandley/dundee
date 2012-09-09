@@ -1,5 +1,5 @@
 {
-  "name": "Dundee",
+  "name": "dundee",
   "description": "Attach functions to prototypes with their names prefixed by _",
   "version": "0.0.1",
   "license": "BSD",
@@ -11,11 +11,11 @@
   
   "repository": {
     "type": "git",
-    "url": "git://github.com/stephenhandley/Dundee.git"
+    "url": "git://github.com/stephenhandley/dundee.git"
   },
   
   "bugs": { 
-    "url" : "http://github.com/stephenhandley/Dundee/issues"
+    "url" : "http://github.com/stephenhandley/dundee/issues"
   },
   
   "scripts": {
