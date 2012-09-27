@@ -1,9 +1,11 @@
 # Description
 
-Extend objects within methods prefixed by '_'
+Extend objects with methods prefixed by '_'
 
 [dundee-string](http://github.com/stephenhandley/dundee-string)
+
 [dundee-array](http://github.com/stephenhandley/dundee-array)
+
 [dundee-object](http://github.com/stephenhandley/dundee-object)
 
 # Latest Version
