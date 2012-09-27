@@ -1,19 +1,19 @@
 var Assert = require('assert');
 var Asserts = require('asserts');
 
-var __ = require('../');
+var _ = require('../');
 
 Asserts({
   "dundee should": {
     "attach functions passed via object": function () {
-      __.remove(Array);
+      _.remove(Array);
       
       // sanity check.. shouldn't start with empty method
       var x = [];
       var array_methods = Object.getOwnPropertyNames(Object.getPrototypeOf(x));
       Assert.equal(array_methods.indexOf('_empty'), -1);
       
-      __(Array, {
+      _(Array, {
         empty: function() {
           return (this.length === 0);
         }
@@ -30,8 +30,8 @@ Asserts({
     },
     
     "filter and attach via local require": function () {
-      __.remove(Array);
-      __(Array, require('./array'), ['empty']);
+      _.remove(Array);
+      _(Array, require('./array'), ['empty']);
       
       var barf = ["barf"];
       
@@ -44,7 +44,7 @@ Asserts({
     },
         
     "attach functions via npm": function () {
-      __(String);
+      _(String);
       
       var hihi= "hi_hi";
       
@@ -55,8 +55,8 @@ Asserts({
     },
     
     "filter and attach functions via npm": function () {
-      __.remove(String);
-      __(String, ['capitalize', 'camelize']);
+      _.remove(String);
+      _(String, ['capitalize', 'camelize']);
       
       var hihi = "hi_hi";
       
@@ -67,7 +67,7 @@ Asserts({
     },
     
     "properly attach and remove functions": function () {
-      __.remove(String);
+      _.remove(String);
       
       var method_names = Object.getOwnPropertyNames(require('dundee-string'));
       
@@ -75,8 +75,8 @@ Asserts({
       
       var assertHasMethod = function (method_name, invert) {
         var expected = invert ? false : true;
-        Assert.equal(__.has(s, method_name), expected);
-        Assert.equal(__.has(String, method_name), expected);
+        Assert.equal(_.has(s, method_name), expected);
+        Assert.equal(_.has(String, method_name), expected);
       };
       
       var assertDoesNotHaveMethod = function (method_name) {
@@ -88,7 +88,7 @@ Asserts({
         assertDoesNotHaveMethod(method_name);
       });
       
-      __(String);
+      _(String);
       
       // should have all the extension methods now
       method_names.forEach(function (method_name) {
@@ -98,7 +98,7 @@ Asserts({
       var removed_method_names = [];
       while (method_names.length > 0) {
         var removed_method_name = method_names.pop();
-        __.remove(String, removed_method_name);
+        _.remove(String, removed_method_name);
         removed_method_names.push(removed_method_name);
         
         // shouldn't have the removed method
