@@ -2,6 +2,8 @@
 
 Extend objects with methods prefixed by '_'
 
+In progress:
+
 [dundee-string](http://github.com/stephenhandley/dundee-string)
 
 [dundee-array](http://github.com/stephenhandley/dundee-array)
