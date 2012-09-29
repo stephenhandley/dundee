@@ -1,9 +1,9 @@
 {
   "name": "dundee",
   "description": "Attach functions to prototypes with their names prefixed by _",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib",
   
   "repository": {
     "type": "git",
@@ -19,9 +19,7 @@
   },
 
   "keywords": [
-    "extension",
-    "underscore",
-    "__"
+    "extension"
   ],
   
   "engines" : {
@@ -29,13 +27,12 @@
   },
   
   "directories" : {
-    "lib" : ".",
+    "lib" : "lib",
     "test" : "test"
   },
   
   "devDependencies": {
-    "asserts": "~2.0.0",
-    "dundee-string": "~0.0.1"
+    "asserts": "2.x"
   },
   
   "author": {

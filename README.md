@@ -2,17 +2,9 @@
 
 Extend objects with methods prefixed by '_'
 
-In progress:
-
-[dundee-string](http://github.com/stephenhandley/dundee-string)
-
-[dundee-array](http://github.com/stephenhandley/dundee-array)
-
-[dundee-object](http://github.com/stephenhandley/dundee-object)
-
 # Latest Version
 
-2.1.0
+2.2.0
 
 # Installation
 
@@ -22,7 +14,7 @@ in package.json
 {
   ...
   "dependencies": {
-    "dundee": "~2.1.0"
+    "dundee": "2.2.0"
   }
   ...
 }
@@ -49,10 +41,10 @@ _.remove(Array, 'empty');
 x._empty(); // throws error ~= /has no method/
 ```
 
-Can also extend via libraries (in progress) on npm 
+Can also extend via library
 
 ```js
-__(String, ['capitalize', 'startsWith']);
+_(String, ['capitalize', 'startsWith']);
 var b = "barfotron";
 b._capitalize()._startsWith('Barf'); // true
 _.has(b, 'capitalize'); // true
