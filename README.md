@@ -4,7 +4,7 @@ Extend objects with methods prefixed by '_'
 
 # Latest Version
 
-2.2.0
+2.3.0
 
 # Installation
 
@@ -14,7 +14,7 @@ in package.json
 {
   ...
   "dependencies": {
-    "dundee": "2.2.0"
+    "dundee": "2.3.0"
   }
   ...
 }

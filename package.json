@@ -1,7 +1,7 @@
 {
   "name": "dundee",
   "description": "Attach functions to prototypes with their names prefixed by _",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "license": "MIT",
   "main": "lib",
   
@@ -32,7 +32,7 @@
   },
   
   "devDependencies": {
-    "asserts": "2.x"
+    "asserts": "3.x"
   },
   
   "author": {
