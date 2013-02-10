@@ -113,5 +113,25 @@ module.exports = {
         });
       }
     }
+  },
+  
+  "dundee should not": {
+      "overwrite existing properties on a prototype": function () {
+        var good_barf = "barf";
+        
+        Array.prototype._barf = function () {
+          return good_barf;
+        }
+        Assert.throws(function () {
+          _(Array, {
+            barf: function () {
+              return "bad barf"
+            }
+          });
+        }, /Dundee attach of/ );
+        
+        a = new Array();
+        Assert.equal(a._barf(), good_barf);
+      }
   }
 };
