@@ -3,7 +3,8 @@
   "description": "Attach functions to prototypes with their names prefixed by _",
   "version": "2.4.0",
   "license": "MIT",
-  "main": "lib",
+  
+  "main": "lib/index.js",
   
   "repository": {
     "type": "git",
