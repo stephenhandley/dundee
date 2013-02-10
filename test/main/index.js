@@ -1,19 +1,19 @@
 var Path = require('path');
 var Assert = require('assert');
 
-var _ = require('../../');
+var __ = require('../../');
 
 module.exports = {
   "dundee should": {
     "attach functions passed via object": function () {
-      _.remove(Array);
+      __.remove(Array);
       
       // sanity check.. shouldn't start with empty method
       var x = [];
       var array_methods = Object.getOwnPropertyNames(Object.getPrototypeOf(x));
       Assert.equal(array_methods.indexOf('_empty'), -1);
       
-      _(Array, {
+      __(Array, {
         empty: function() {
           return (this.length === 0);
         }
@@ -30,8 +30,8 @@ module.exports = {
     },
     
     "filter and attach via local require": function () {
-      _.remove(Array);
-      _(Array, require('./array'), ['empty']);
+      __.remove(Array);
+      __(Array, require('./array'), ['empty']);
       
       var barf = ["barf"];
       
@@ -44,7 +44,7 @@ module.exports = {
     },
         
     "attach functions via bundled extensions": function () {
-      _(String);
+      __(String);
       
       var hihi= "hi_hi";
       
@@ -55,8 +55,8 @@ module.exports = {
     },
     
     "filter and attach functions via bundled extensions": function () {
-      _.remove(String);
-      _(String, ['capitalize', 'camelize']);
+      __.remove(String);
+      __(String, ['capitalize', 'camelize']);
       
       var hihi = "hi_hi";
       
@@ -67,7 +67,7 @@ module.exports = {
     },
     
     "properly attach and remove functions": function () {
-      _.remove(String);
+      __.remove(String);
       
       var string_extension = Path.join(__dirname, '..', '..', 'lib', 'extensions', 'string');
       var method_names = Object.getOwnPropertyNames(require(string_extension));
@@ -76,8 +76,8 @@ module.exports = {
       
       var assertHasMethod = function (method_name, invert) {
         var expected = invert ? false : true;
-        Assert.equal(_.has(s, method_name), expected);
-        Assert.equal(_.has(String, method_name), expected);
+        Assert.equal(__.has(s, method_name), expected);
+        Assert.equal(__.has(String, method_name), expected);
       };
       
       var assertDoesNotHaveMethod = function (method_name) {
@@ -89,7 +89,7 @@ module.exports = {
         assertDoesNotHaveMethod(method_name);
       });
       
-      _(String);
+      __(String);
       
       // should have all the extension methods now
       method_names.forEach(function (method_name) {
@@ -99,7 +99,7 @@ module.exports = {
       var removed_method_names = [];
       while (method_names.length > 0) {
         var removed_method_name = method_names.pop();
-        _.remove(String, removed_method_name);
+        __.remove(String, removed_method_name);
         removed_method_names.push(removed_method_name);
         
         // shouldn't have the removed method
@@ -123,7 +123,7 @@ module.exports = {
           return good_barf;
         }
         Assert.throws(function () {
-          _(Array, {
+          __(Array, {
             barf: function () {
               return "bad barf"
             }

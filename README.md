@@ -23,9 +23,9 @@ in package.json
 # Usage
 
 ```js
-var _ = require('dundee');
+var __ = require('dundee');
 
-_(Array, {
+__(Array, {
   empty: function() {
     return (this.length === 0);
   }
@@ -35,7 +35,7 @@ var x = [];
 x._empty(); // true
 x.push(2);
 x._empty(); // false
-_.remove(Array, 'empty'); 
+__.remove(Array, 'empty'); 
 // _.remove(Array, ['list', 'of' 'methods']) removes multiple methods added by Dundee
 // _.remove(Array) removes all methods added by Dundee
 x._empty(); // throws error ~= /has no method/
@@ -44,10 +44,10 @@ x._empty(); // throws error ~= /has no method/
 Can also extend via library
 
 ```js
-_(String, ['capitalize', 'startsWith']);
+__(String, ['capitalize', 'startsWith']);
 var b = "barfotron";
 b._capitalize()._startsWith('Barf'); // true
-_.has(b, 'capitalize'); // true
+__.has(b, 'capitalize'); // true
 ```
 
 #Build status
