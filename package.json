@@ -1,20 +1,20 @@
 {
   "name": "dundee",
   "description": "Attach functions to prototypes with their names prefixed by _",
-  "version": "2.5.0",
+  "version": "3.0.0",
   "license": "MIT",
-  
+
   "main": "lib/index.js",
-  
+
   "repository": {
     "type": "git",
     "url": "git://github.com/stephenhandley/dundee.git"
   },
-  
-  "bugs": { 
+
+  "bugs": {
     "url" : "http://github.com/stephenhandley/dundee/issues"
   },
-  
+
   "scripts": {
     "test": "node test/test.js"
   },
@@ -22,20 +22,25 @@
   "keywords": [
     "extension"
   ],
-  
+
   "engines" : {
-    "node" : ">=0.4.0"
+    "node" : ">=0.10.5"
   },
-  
+
   "directories" : {
     "lib" : "lib",
     "test" : "test"
   },
-  
-  "devDependencies": {
-    "asserts": "3.x"
+
+  "dependencies": {
+    "type-of-is" : "3.1.x",
+    "dotmix"     : "1.0.x"
   },
-  
+
+  "devDependencies": {
+    "asserts": "4.0.x"
+  },
+
   "author": {
     "name": "Stephen Handley",
     "email": "stephen.handley@gmail.com",

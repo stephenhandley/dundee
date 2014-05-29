@@ -1,9 +1,9 @@
 module.exports = {
-  empty: function() {
+  isEmpty: function() {
     return (this.length === 0);
   },
-  
-  notEmpty: function() {
+
+  isNotEmpty: function() {
     return (this.length > 0);
   }
 }
